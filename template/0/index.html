@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<!--
+Great solution from :
+
+How to separate web components to individual files and load them?
+https://stackoverflow.com/questions/55080103/how-to-separate-web-components-to-individual-files-and-load-them
+
+Note how CSS propagates to main document.
+-->
+<html>
+<head>
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta charset="utf-8">
+  <title>Templated</title>
+</head>
+
+<body>
+  <p>A text from page</p>
+  <div id="app" />
+
+  <script src="script.js">
+  </script>
+</body>
+</html>
