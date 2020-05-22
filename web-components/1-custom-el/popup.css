@@ -9,7 +9,7 @@
   padding: 10px;
   background: white;
   border-radius: 10px;
-  opacity: 0;
+  opacity: 1;
   transition: 0.6s all;
   position: absolute;
   bottom: 20px;
@@ -20,5 +20,5 @@ img {
   width: 1.2rem;
 }
 .icon:hover + .info, .icon:focus + .info {
-  opacity: 1;
+  /* opacity: 1; */
 }
