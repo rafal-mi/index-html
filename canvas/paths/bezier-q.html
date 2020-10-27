@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bezier Q</title>
+
+  <style>
+    body {
+      background-color: #333;
+    }
+  </style>
+</head>
+
+<body>
+
+  <canvas id="canvas" width="400" height="300">
+
+  </canvas>
+
+  <script>
+    function draw() {
+      var canvas = document.getElementById('canvas');
+      if(!canvas.getContext) {
+        return;
+      }
+      var ctx = canvas.getContext('2d');
+
+      ctx.arc(102, 102, 100, 0, Math.PI * 2, true);
+      ctx.strokeStyle = "lightyellow";
+      ctx.lineWidth = 4;
+      ctx.stroke();
+      ctx.fillStyle = "orange";
+      ctx.fill();
+      ctx.clip();
+
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.quadraticCurveTo(300, 100, 0, 200);
+      ctx.lineTo(0, 0);
+      ctx.strokeStyle = "lightyellow";
+      ctx.lineWidth = 4;
+      ctx.stroke();
+      ctx.fillStyle = "gold"
+      ctx.fill();
+
+      ctx.beginPath();
+      ctx.moveTo(0, 0);
+      ctx.quadraticCurveTo(100, 300, 200, 0);
+      ctx.lineTo(0, 0);
+      ctx.strokeStyle = "lightyellow";
+      ctx.lineWidth = 4;
+      ctx.stroke();
+
+      // Create gradient
+      var grd = ctx.createLinearGradient(100, 0, 100, 200);
+      grd.addColorStop(0, "orangered");
+      grd.addColorStop(1, "yellow");
+      ctx.fillStyle = grd;
+      ctx.fill();
+    }
+
+    window.onload = draw; 
+  </script>
+</body>
+
+</html>
